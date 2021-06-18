@@ -9,14 +9,15 @@
 namespace my {
     template<typename T> class LinkedList {
     private:
-        Node<T>* firstNode;
-        Node<T>* lastNode;
 
     public:
+        Node<T>* firstNode;
+        Node<T>* lastNode;
         size_t size;
         LinkedList();
         ~LinkedList();
         void push_back(T val);
+        T pop_front();
         void clear();
         T& get(const size_t i);
         T& operator[](const size_t i);

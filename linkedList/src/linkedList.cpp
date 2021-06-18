@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "linkedList.hpp"
 
 namespace my {
@@ -24,6 +26,16 @@ namespace my {
         }
         this->lastNode = newNode;
         ++(this->size); 
+    }
+
+    template<typename T>
+    T LinkedList<T>::pop_front() {
+        Node<T>* secondNode = this->firstNode->getNextNode();
+        T out = this->firstNode->getData();
+        delete this->firstNode;
+        this->firstNode = secondNode;
+        this->size--;
+        return out;
     }
 
     template<typename T>
